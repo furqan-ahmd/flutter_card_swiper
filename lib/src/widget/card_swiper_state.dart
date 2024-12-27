@@ -11,8 +11,8 @@ class _CardSwiperState<T extends Widget> extends State<CardSwiper>
   CardSwiperDirection _detectedVerticalDirection = CardSwiperDirection.none;
   bool _tappedOnTop = false;
 
-  final _undoableIndex = Undoable<int?>(null);
-  final Queue<CardSwiperDirection> _directionHistory = Queue();
+  Undoable<int?> get _undoableIndex => widget.controller.undoableIndex;
+  Queue<CardSwiperDirection> get _directionHistory => widget.controller.directionHistory;
 
   int? get _currentIndex => _undoableIndex.state;
 

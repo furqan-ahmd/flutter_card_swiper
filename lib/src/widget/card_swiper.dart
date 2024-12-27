@@ -4,6 +4,7 @@ import 'dart:math' as math;
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
+import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'package:flutter_card_swiper/src/card_animation.dart';
 import 'package:flutter_card_swiper/src/controller/controller_event.dart';
 import 'package:flutter_card_swiper/src/utils/number_extension.dart';
@@ -35,7 +36,7 @@ class CardSwiper extends StatefulWidget {
   /// The [CardSwiperController] used to control the swiper externally.
   ///
   /// If `null`, the swiper can only be controlled by user input.
-  final CardSwiperController? controller;
+  final CardSwiperController controller;
 
   /// The duration of each swipe animation.
   ///
@@ -125,7 +126,7 @@ class CardSwiper extends StatefulWidget {
   const CardSwiper({
     required this.cardBuilder,
     required this.cardsCount,
-    this.controller,
+    required this.controller,
     this.initialIndex = 0,
     this.padding = const EdgeInsets.symmetric(horizontal: 20, vertical: 25),
     this.duration = const Duration(milliseconds: 200),

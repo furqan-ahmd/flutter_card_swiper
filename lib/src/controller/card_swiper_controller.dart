@@ -1,7 +1,9 @@
 import 'dart:async';
+import 'dart:collection';
 
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'package:flutter_card_swiper/src/controller/controller_event.dart';
+import 'package:flutter_card_swiper/src/utils/undoable.dart';
 
 /// A controller that can be used to trigger swipes on a CardSwiper widget.
 class CardSwiperController {
@@ -28,4 +30,6 @@ class CardSwiperController {
   Future<void> dispose() async {
     await _eventController.close();
   }
+  final undoableIndex = Undoable<int?>(null);
+  final Queue<CardSwiperDirection> directionHistory = Queue(); 
 }
